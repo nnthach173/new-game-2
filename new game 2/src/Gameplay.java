@@ -28,14 +28,15 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 	private int ballYdir = -5;
 	
 	private MapGenerator map;
-//  private Enemy enemy;
+	private MapGenerator enemyMap;
 	Image enemies;
 	Graphics graphics;
 
 	public Gameplay() {
 //		enemy = new Enemy();
-		enemies = new ImageIcon("enemy4.png").getImage();
-		map = new MapGenerator(3,7);
+		//enemies = new ImageIcon("enemy4.png").getImage();
+		map = new MapGenerator(5,7);
+		enemyMap = new MapGenerator(5,7);
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
@@ -52,11 +53,8 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 		//draw Map
 		
 		map.draw((Graphics2D)g);
-		g.drawImage(enemies,100,100,null);
-		g.drawImage(enemies,250,250,null);
+		enemyMap.draw((Graphics2D)g);
 				
-				
-//				enemy.paint(g);
 
 		// borders
 		g.setColor(Color.yellow);
@@ -100,7 +98,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 						Rectangle brickRect = rect;
 						
 						if(ballRect.intersects(brickRect)) {
-							map.setBrickValue(0, i, j);
+	//						map.setBrickValue(0, i, j);
 							totalEnemy--;
 							score += 5;
 							

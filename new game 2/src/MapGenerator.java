@@ -43,17 +43,22 @@ public class MapGenerator {
 					g.setStroke(new BasicStroke(3));
 					g.setColor(Color.black);
 					g.drawRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
+					
 
 				}
 				
 				// draw enemy
-//				enemyMap[i][j].paint(g);
-//				g.drawImage(enemyMap[i][j],100,100,null);
+				//enemyMap[i][j].paint(g);
+				//g.drawImage(enemyMap[i][j],100,100,null);
 			}
 	}
+
 }
 	
-	public void setBrickValue(int value, int row, int col) {
-		map[row][col] = value;
-	}
+	//public void setBrickValue(int value, int row, int col) {
+	//map[row][col] = value;
+//}
+	//public void setEnemyValue(Image enemyMap, int row, int col) {
+//	enemyMap[i][j]	= ;
+//}
 }
