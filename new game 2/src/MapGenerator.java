@@ -44,21 +44,26 @@ public class MapGenerator {
 					g.setColor(Color.black);
 					g.drawRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
 					
-
+				}
 				}
 				
 				// draw enemy
 				//enemyMap[i][j].paint(g);
-				//g.drawImage(enemyMap[i][j],100,100,null);
-			}
-	}
+				for (int i = 0; i<enemyMap.length; i++) {
+					 for (int j = 0; j<enemyMap[0].length;j++) {
+						 if(enemyMap[i][j] != null) {
+						 g.drawImage(enemyMap[i][j],100,100,null);    ///// draw image
+					 }
+					 }
+				}
+		}
 
 }
 	
-	//public void setBrickValue(int value, int row, int col) {
-	//map[row][col] = value;
-//}
-	//public void setEnemyValue(Image enemyMap, int row, int col) {
-//	enemyMap[i][j]	= ;
-//}
+	public void setBrickValue(int value, int row, int col) {
+		map[row][col] = value;
+}
+	public void setEnemyValue(Image enemyMap, int row, int col) {
+		enemyMap[row][col]	= null ;  //thiếu value của enemyMap
+}
 }
