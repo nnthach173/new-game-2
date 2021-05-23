@@ -35,8 +35,8 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 	public Gameplay() {
 //		enemy = new Enemy();
 		//enemies = new ImageIcon("enemy4.png").getImage();
-		map = new MapGenerator(5,7);
-		enemyMap = new MapGenerator(5,7);
+		//map = new MapGenerator(5,7);
+		enemyMap = new MapGenerator(5,7);  /// ca mới add enemyMap vào
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
