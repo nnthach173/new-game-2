@@ -27,16 +27,16 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 	private int ballXdir = -5;
 	private int ballYdir = -5;
 	
-	private MapGenerator map;
+//	private MapGenerator map;
 	private MapGenerator enemyMap;
 	Image enemies;
 	Graphics graphics;
 
 	public Gameplay() {
 //		enemy = new Enemy();
-		//enemies = new ImageIcon("enemy4.png").getImage();
-		//map = new MapGenerator(5,7);
-		enemyMap = new MapGenerator(5,7);  /// ca mới add enemyMap vào
+		enemies = new ImageIcon("enemy4.png").getImage();
+//		map = new MapGenerator(2,5);
+		enemyMap = new MapGenerator(3,5);  
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
@@ -52,9 +52,9 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 		
 		//draw Map
 		
-		map.draw((Graphics2D)g);
+//		map.draw((Graphics2D)g);
 		enemyMap.draw((Graphics2D)g);
-				
+//		g.drawImage(enemies,100,100,null);
 
 		// borders
 		g.setColor(Color.yellow);
@@ -85,20 +85,20 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 			if(new Rectangle(ballposX,ballposY,20,20).intersects(new Rectangle(playerX,800,100,8))) {
 				ballYdir = -ballYdir;
 			}
-			for(int i = 0; i<map.map.length; i++) {
-				for(int j = 0; j<map.map[0].length;j++) {
-					if(map.map[i][j] > 0) {
-						int brickX = j*map.brickWidth + 80;
-						int brickY = i*map.brickHeight + 50;
-						int brickWidth = map.brickWidth;
-						int brickHeight = map.brickHeight;
+			for(int i = 0; i< enemyMap.enemyMap.length; i++) {
+				for(int j = 0; j<enemyMap.enemyMap[0].length;j++) {
+					if(enemyMap.enemyMap[i][j] = null) {
+						int brickX = j*enemyMap.brickWidth + 80;
+						int brickY = i*enemyMap.brickHeight + 50;
+						int brickWidth = enemyMap.brickWidth;
+						int brickHeight = enemyMap.brickHeight;
 						
 						Rectangle rect = new Rectangle(brickX, brickY, brickWidth, brickHeight);
 						Rectangle ballRect = new Rectangle(ballposX, ballposY, 20,20);
 						Rectangle brickRect = rect;
 						
 						if(ballRect.intersects(brickRect)) {
-	//						map.setBrickValue(0, i, j);
+							//map.setBrickValue(0, i, j);
 							totalEnemy--;
 							score += 5;
 							
@@ -112,6 +112,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 					}
 				}
 		}
+		
 			
 			
 			ballposX += ballXdir;
