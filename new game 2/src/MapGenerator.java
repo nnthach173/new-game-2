@@ -14,14 +14,6 @@ public class MapGenerator {
 	public Image enemyMap[][];
 	
 	public MapGenerator(int row, int col) {
-//		map = new int[row][col];
-//		for(int i = 0; i<map.length;i++) {
-//			for(int j=0; j< map[0].length;j++) {
-//				map[i][j] = 1;
-//			}
-//		}
-//		brickWidth = 540/col;
-//		brickHeight = 150/row;
 		brickWidth = 540/col;
 		brickHeight = 250/row;
 		 
@@ -36,28 +28,13 @@ public class MapGenerator {
 	}
 	
 	public void draw(Graphics2D g) {
-//		for(int i = 0; i<map.length;i++) {
-//			for(int j=0; j< map[0].length;j++) {
-//				if(map[i][j]>0) {
-//					g.setColor(Color.white);
-//					g.fillRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
-//				
-//					g.setStroke(new BasicStroke(3));
-//					g.setColor(Color.black);
-//					g.drawRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
-//					
-//				}
-//				}
-//				
-//				// draw enemy
-//				//enemyMap[i][j].paint(g);
-//				
-//		}
-		
+
 		for (int i = 0; i<enemyMap.length; i++) {
 			 for (int j = 0; j<enemyMap[0].length;j++) {
 				 if(enemyMap[i][j] != null) {
 				 g.drawImage(enemyMap[i][j],j * brickWidth + 80, i * brickHeight + 50,null); 
+				 g.setColor(Color.white);
+
 			 }
 			 }
 		}
